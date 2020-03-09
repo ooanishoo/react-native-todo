@@ -2,9 +2,12 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 
-export default function TodoList() {
+export default function TodoList(props) {
+  const {todos} = props.todos;
+  console.log(todos);
   return (
     <ScrollView>
+      
       <View style={styles.listTile}>
         <Icon name="square" style={styles.leading} size={20} />
         <Text style={styles.title}>hellos</Text>
