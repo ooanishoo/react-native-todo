@@ -16,7 +16,7 @@ export default function App() {
 const styles = StyleSheet.create({
   statusBar: {
     backgroundColor: "#7F39FB",
-    color: "white",
+    color: "#fff",
     width: "100%",
     height: 30
   },
