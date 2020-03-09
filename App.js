@@ -1,14 +1,17 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import AppBar from './src/components/AppBar'
+import Todo from './src/components/Todo'
+import TodoList from './src/components/TodoList'
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.statusBar}></View>
-      <View style={styles.appBar}>
-        <Text style={styles.heading}>Todo App</Text>
-      </View>
-      <Text>Todo App</Text>
+      <AppBar />
+      <Todo />
+      <TodoList />
+      <Text>Todo Apps</Text>
     </View>
   );
 }
