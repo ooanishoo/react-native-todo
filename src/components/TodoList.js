@@ -1,14 +1,26 @@
 import React from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
-import Icon from "react-native-vector-icons/Feather";
+//import Icon from "react-native-vector-icons/Feather";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 export default function TodoList(props) {
   //console.log(props.todo, "logging props");
   return (
     <View style={styles.listTile}>
-      <Icon name="square" style={styles.leading} size={20} />
+      <Icon
+        name={props.todo.isChecked ? "check-circle" : "radio-button-unchecked"}
+        style={styles.leading}
+        size={20}
+        color="#666666"
+        onPress={() => props.checkTodo(props.todo.key)}
+      />
       <Text style={styles.title}>{props.todo.name}</Text>
-      <Icon name="trash-2" style={styles.trailing} size={20} />
+      <Icon
+        name="delete"
+        style={styles.trailing}
+        size={20}
+        color="#666666"
+      />
     </View>
   );
 }

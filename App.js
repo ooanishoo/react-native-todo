@@ -28,11 +28,20 @@ export default function App() {
       setTitle("");
     }
   };
-  const checkTodo = () => {};
+  const checkTodo = id => {
+    // loop through todo list and look for the the todo that matches the given id param
+    // update theusing  todos setTodos function
+    setTodos(todos.map(todo => {
+      if (todo.key === id) {
+        todo.isChecked = !todo.isChecked;
+      }
+      return todo;
+    }));
+  };
   const deleteTodo = () => {};
 
   useEffect(() => {
-    console.log(todos.length, 'TodoList length');
+    console.log(todos.length, "TodoList length");
     //console.log(todos);
   }, [todos]);
 
@@ -51,11 +60,9 @@ export default function App() {
       </View>
 
       <ScrollView>
-        {todos.map(todo => 
-          <TodoList 
-            key={todo.key}
-            todo={todo} />
-          )}
+        {todos.map(todo => (
+          <TodoList key={todo.key} todo={todo} checkTodo={checkTodo} />
+        ))}
       </ScrollView>
     </View>
   );
