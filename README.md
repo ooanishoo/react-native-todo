@@ -7,6 +7,14 @@ A basic todo app built in react-native using hooks only. Basic functionality inc
     - Mark todo as checked / unchecked 
     - Remove todo from todo list
     
+# Screenshots
+<p>
+<img width="400" alt="Screen Shot 2020-03-09 at 3 36 20 pm" src="https://user-images.githubusercontent.com/9260574/76278060-bf4d5700-62de-11ea-87a2-961f8f50ca20.PNG">
+<img width="400" alt="Screen Shot 2020-03-09 at 3 36 20 pm" src="https://user-images.githubusercontent.com/9260574/76278066-c2484780-62de-11ea-95a6-1f2d51164b9a.PNG">
+<img width="400" alt="Screen Shot 2020-03-09 at 3 36 20 pm" src="https://user-images.githubusercontent.com/9260574/76278069-c4aaa180-62de-11ea-80fa-65b39f536370.PNG">
+<img width="400" alt="Screen Shot 2020-03-09 at 3 36 20 pm" src="https://user-images.githubusercontent.com/9260574/76278073-c83e2880-62de-11ea-8a18-404530de4fca.PNG">
+</p>
+    
 ## Getting Started
 
 ## Pre-requisties
