@@ -20,6 +20,7 @@ export default function TodoList(props) {
         style={styles.trailing}
         size={20}
         color="#666666"
+        onPress={() => props.deleteTodo(props.todo.key)}
       />
     </View>
   );

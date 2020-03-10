@@ -20,6 +20,7 @@ export default function App() {
   // Initalize empty array to store todos
   const [todos, setTodos] = useState([]);
 
+  // function to add todo object in todo list
   const addTodo = () => {
     if (title.length > 0) {
       // Add todo to the list
@@ -28,17 +29,29 @@ export default function App() {
       setTitle("");
     }
   };
+
+  // function to mark todo as checked or unchecked
   const checkTodo = id => {
     // loop through todo list and look for the the todo that matches the given id param
-    // update theusing  todos setTodos function
-    setTodos(todos.map(todo => {
-      if (todo.key === id) {
-        todo.isChecked = !todo.isChecked;
-      }
-      return todo;
+    // update the state using setTodos function
+    setTodos(
+      todos.map(todo => {
+        if (todo.key === id) {
+          todo.isChecked = !todo.isChecked;
+        }
+        return todo;
+      })
+    );
+  };
+
+  // function to delete todo from the todo list
+  const deleteTodo = id => {
+    // loop through todo list and return todos that don't match the id
+    // update the state using setTodos function
+    setTodos(todos.filter(todo => {
+      return todo.key !== id;
     }));
   };
-  const deleteTodo = () => {};
 
   useEffect(() => {
     console.log(todos.length, "TodoList length");
@@ -61,7 +74,12 @@ export default function App() {
 
       <ScrollView>
         {todos.map(todo => (
-          <TodoList key={todo.key} todo={todo} checkTodo={checkTodo} />
+          <TodoList
+            key={todo.key}
+            todo={todo}
+            checkTodo={checkTodo}
+            deleteTodo={deleteTodo}
+          />
         ))}
       </ScrollView>
     </View>
