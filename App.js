@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, TextInput, View, Button } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Button,
+  ScrollView
+} from "react-native";
 import AppBar from "./src/components/AppBar";
 import Todo from "./src/components/Todo";
 import TodoList from "./src/components/TodoList";
@@ -18,15 +25,15 @@ export default function App() {
       // Add todo to the list
       setTodos([...todos, { key: Date.now(), name: title, isChecked: false }]);
       // clear the value of the textfield
-      setTitle('');
+      setTitle("");
     }
   };
   const checkTodo = () => {};
   const deleteTodo = () => {};
 
   useEffect(() => {
-    console.log(todos.length);
-    console.log(todos);
+    console.log(todos.length, 'TodoList length');
+    //console.log(todos);
   }, [todos]);
 
   return (
@@ -42,7 +49,14 @@ export default function App() {
         />
         <Button title="Add" color="#7F39FB" onPress={() => addTodo()} />
       </View>
-      {/* <TodoList todos={todos} /> */}
+
+      <ScrollView>
+        {todos.map(todo => 
+          <TodoList 
+            key={todo.key}
+            todo={todo} />
+          )}
+      </ScrollView>
     </View>
   );
 }
