@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, ScrollView } from "react-native";
 //import Icon from "react-native-vector-icons/Feather";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-export default function TodoList(props) {
+export default function TodoItem(props) {
   //console.log(props.todo, "logging props");
   return (
     <View style={styles.listTile}>
@@ -36,16 +36,16 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 10,
     borderBottomWidth: 0.5,
-    borderBottomColor: "#666666"
+    borderBottomColor: "#666666",
   },
   leading: {
-    width: "20%"
+    width: "20%",
   },
   title: {
     width: "60%",
-    fontSize: 18
+    fontSize: 18,
   },
   trailing: {
-    width: "20%"
-  }
+    width: "20%",
+  },
 });
